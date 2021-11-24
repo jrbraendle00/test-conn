@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS `wtdDB`.`Task` (
+  `Name` VARCHAR(50) NOT NULL,
+  `Desc` VARCHAR(125) NULL,
+  `Due_Date` DATE NOT NULL,
+  `Complete` TINYINT NULL,
+  `Assoc_Task_List` VARCHAR(50) NULL,
+  PRIMARY KEY (`Name`))
+ENGINE = InnoDB
+
+CREATE TABLE Task (`Name` VARCHAR(50) NOT NULL,
+  `Desc` VARCHAR(125) NULL,
+  `Due_Date` DATE NOT NULL,
+  `Complete` TINYINT NULL,
+  `Assoc_Task_List` VARCHAR(50) NULL,
+  PRIMARY KEY (`Name`))
+
+
+CREATE TABLE IF NOT EXISTS `wtdDB`.`Task List` (
+  `Task_List_Name` VARCHAR(50) NOT NULL,
+  `List_Complete` TINYINT NOT NULL,
+  PRIMARY KEY (`Task_List_Name`))
+ENGINE = InnoDB
+
+CREATE TABLE `Task List` (
+  `Task_List_Name` VARCHAR(50) NOT NULL,
+  `List_Complete` TINYINT NOT NULL,
+  PRIMARY KEY (`Task_List_Name`))
+
+CREATE TABLE `User` (
+  `Username` VARCHAR(30) NOT NULL,
+  `Password` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(70) NULL,
+  PRIMARY KEY (`Username`),
+  UNIQUE INDEX `Username_UNIQUE` (`Username` ASC) VISIBLE)
+ENGINE = InnoDB
